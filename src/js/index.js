@@ -1,17 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const stage = document.querySelector(".stage");
-  console.log(stage);
+  // console.log(stage);
 
-  const pacman1 = new Pacman (170, "open");
-  console.log(pacman1);
+  const pacman1 = new Pacman (85, "open");
+  // console.log(pacman1);
 
   pacman1.mount(stage);
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "ArrowRight") {
       pacman1.moveRight();
-    };
+    } else if (event.key === "ArrowLeft") {
+      pacman1.moveLeft();
+    } else if (event.key === "ArrowUp") {
+      pacman1.moveUp();
+    } else if (event.key === "ArrowDown") {
+      pacman1.moveDown();
+    }
   })
 
 
